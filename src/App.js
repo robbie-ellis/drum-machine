@@ -15,17 +15,6 @@ function App() {
     closedHH: "https://cdn.freecodecamp.org/testable-projects-fcc/audio/Cev_H2.mp3"
   });
 
-  
-  const audioElements = useRef({});
-
-  useEffect(() => {
-    // Preload all audio elements
-    Object.keys(audioSamples).forEach(key => {
-      const audio = new Audio(audioSamples[key]);
-      audioElements.current[key] = audio;
-    });
-  }, [audioSamples]);
-
   function playAudioClicked(event) {
     const audioElement = event.target.querySelector('audio');
     if (audioElement) {  
